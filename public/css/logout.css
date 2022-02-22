@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height:100%;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.image1  {
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background: white center no-repeat cover;
+
+}
+
+button {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 47%;
+
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  border: 2px solid #4CAF50;
+  background-color: #4CAF50;
+  
+  font-size: 24px;
+  padding: 14px 40px;
+  background-color:#5BC85B
+
+}
+button:hover{
+  transition-duration: 0.2s;
+  background-color:#31A231;
+}
+button:active {
+  transform: translateY(10px);
+}
+/*by Elijah Dayon*/

@@ -1,0 +1,9 @@
+.reg-Form {
+  background-color: #fefefe;
+  margin: auto; 
+}
+
+label {
+  font-weight: bold;
+  float: left;
+}
