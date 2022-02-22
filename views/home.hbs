@@ -1,0 +1,198 @@
+<link rel="stylesheet" type="text/css" href="../css/form.css">
+<link rel="stylesheet" type="text/css" href="../css/form_input.css">
+<link rel="stylesheet" type="text/css" href="../css/button.css">
+
+<link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    .app-logo {
+        position: absolute;
+        right: 10%;
+        bottom: -30%;
+        width: 300px;
+        height: 540px;
+        background-color: #333;
+        border-radius: 21px;
+        transform: rotate(30deg);
+        z-index:0;
+    }
+
+    .app-logo::before {
+        position: absolute;
+        top: 10%;
+        right: 10px;
+        bottom: 10%;
+        left: 10px;
+        content: "";
+        background-color: rgba(255, 255, 255, .1);
+    }
+
+    .app-logo-2 {
+        top: -25%;
+        left: 5%;
+        opacity: 0.2;
+    }
+
+    .flex-equal>* {
+        flex: 1;
+    }
+
+    @media (min-width: 768px) {
+        .flex-md-equal>* {
+            flex: 1;
+        }
+    }
+
+    .logoContainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+    }
+
+    .logo {
+        width: 30%;
+        border-radius: 0%;
+    }
+
+    .userInputs {
+        padding: 16px;
+    }
+
+    .lead {
+        z-index:1;
+    }
+</style>
+
+<main>
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 fw-normal">Family<br> Web Application</h1><br><br>
+            <p class="lead fw-normal">A Life360-inspired Web Application: Sign up now to connect with your friends, your
+                family, and your loved ones!
+            </p>
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+                tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalToggleLabel">Signing up</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="reg-Form" method="post" action="/submit-post">
+                                <div class="logoContainer">
+                                    <img src="../srcs/favicon.ico" alt="Logo" class="logo">
+                                </div>
+
+                                <div class="userInputs">
+                                    <label for="userName">Username:</label><br>
+                                    <input class="form_info" type=text placeholder="Enter Username" name="uName"
+                                        id="userName" required><br>
+
+                                    <label for="passWord">Password:</label><br>
+                                    <input class="form_info" type=password placeholder="Enter Password" name="passWord"
+                                        id="passWord" required><br>
+
+                                    <label for="confirmPW">Confirm Password:</label><br>
+                                    <input class="form_info" type=password placeholder="Confirm Password"
+                                        name="confirmPassWord" id="confirmPW" required><br>
+
+                                    <label for="eMail">E-mail Address:</label><br>
+                                    <input class="form_info" type=eMail placeholder="Enter E-mail Address" name="eMail"
+                                        id="eMail" required><br>
+
+                                    <button type="submit" name="submit">Register</button>
+                                </div>
+                                <!-- 
+                                    <div class="userInputs" style="background-color:#f1f1f1">
+                                        <button type="button" class="cancel">Cancel</button>
+                                    </div> -->
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                                data-bs-toggle="modal">Already have an account?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalToggleLabel2">Logging in</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="login" class="reg-Form" method="post">
+                                <div class="logoContainer">
+                                    <img src="../srcs/favicon.ico" alt="Logo" class="logo">
+                                </div>
+                                <label for="tUname">Username:</label><br>
+                                <input class="form_info" type="text" name="tUname" id="tName"
+                                    placeholder="Enter Username"><br>
+
+                                <label for="pWord">Password:</label><br>
+                                <input class="form_info" type="password" name="pWord" id="pPassword"
+                                    placeholder="Enter Password"><br>
+
+                                <button type="submit">Login</button><br><br>
+                                <a href="recoverAcc">Forgot Password?</a><br>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle"
+                                data-bs-toggle="modal">Don't have an account yet?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Register an
+                Account</a>
+        </div>
+        <div class="app-logo shadow-sm d-none d-md-block"><img src="../srcs/favicon.ico">
+        </div>
+        <div class="app-logo app-logo-2 shadow-sm d-none d-md-block"><img src="../srcs/favicon.ico">
+        </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+            <div class="my-3 py-3">
+                <h2 class="display-5">Connect with Others</h2>
+                <p class="lead">Create and build relationships</p>
+            </div>
+            <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                <a href="#"><img
+                        src="https://usvisagroup.com/wp-content/uploads/helena-lopes-463976-unsplash-1024x683.jpg"
+                        height="120%" width="100%" style="border-radius:4%;"></a>
+            </div>
+        </div>
+        <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+            <div class="my-3 py-3">
+                <h2 class="display-5">Create Groups</h2>
+                <p class="lead">Make exciting events and strengthen your connections</p>
+            </div>
+            <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+                <a href="#"><img
+                        src="https://www.tlnt.com/wp-content/uploads/sites/4/2016/08/shutterstock_325459412-700x467.jpg"
+                        height="120%" width="100%" style="border-radius:4%;"></a>
+            </div>
+        </div>
+    </div>
+</main>
